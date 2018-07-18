@@ -51,8 +51,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <label for="password">密码</label>
     <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
   </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="mycheckbox" checked> 七天内自动登录
+    </label>
+  </div>
   <button type="submit" class="btn btn-success" value="确认">确认</button>
- <a herf="WEB-INF/jsp/user/user_register.jsp" target="_blank">还没有注册？点击这里注册</a>
+ <a href="static/jsp/user/user_register.jsp" target="_blank">还没有注册？点击这里注册</a>
 </form>
  
   </div>

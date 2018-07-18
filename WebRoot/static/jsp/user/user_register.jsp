@@ -12,8 +12,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>注册界面</title>
     
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+	<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
 	<style  type="text/css" >
 	html, body, main{
     font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, Sans-Serif;
@@ -43,7 +43,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
      <div>
-   <form class="myform"action="user_login" method="post">
+     <h1 class="h1head">注册页面</h1>
+   <form class="myform" action="user_login" method="post">
   <div class="form-group ">
     <label for="user_name">用户名</label>
     <input type="text" class="form-control" id="user_name" name="user_name" placeholder="请输入您想使用的用户名">

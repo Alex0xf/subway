@@ -35,10 +35,10 @@ public class UserLoginServlet extends HttpServlet {
 	   //查询
 		UserModel user=userService.selectUser(userName, password);
 		if(user==null){//若查询失败，让用户重新登录
-			request.getRequestDispatcher("static/jsp/userLogin/login.jsp").forward(request, response);
+			request.getRequestDispatcher("static/jsp/user/login.jsp").forward(request, response);
 		}
-		else{//登录成功，进入首页(首页还没整合 暂时先转向图书界面)
-			request.getRequestDispatcher("/WEB-INF/jsp/books/books_list.jsp").forward(request, response);
+		else{//登录成功，进入首页
+			request.getRequestDispatcher("static/jsp/user/index.jsp").forward(request, response);
 		}
 		
 	}
