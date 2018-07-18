@@ -52,9 +52,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
   </div>
   <button type="submit" class="btn btn-success" value="确认">确认</button>
-
+ <a herf="WEB-INF/jsp/user/user_register.jsp" target="_blank">还没有注册？点击这里注册</a>
 </form>
-  <a herf="WEB-INF/jsp/user/user_register.jsp" target="_blank">还没有注册？点击这里注册</a>
+ 
   </div>
 </html>
 
@@ -62,4 +62,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 
-.jsp
+
