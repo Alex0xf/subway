@@ -1,0 +1,34 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>'bottom.jsp'</title>
+    
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<!--
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	-->
+	<!--
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	-->
+
+  </head>
+  
+  <body>
+    <div class="container">
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+		</div>
+	</div>
+  </body>
+</html>

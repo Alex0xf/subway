@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <title>登录界面</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	
+
+
+  </head>
+  
+  <body>
+  <div>
+  <form action="/web_demo01/login" method="post">
+    <p>用户名：<input type="text" name="user_name"/></p>
+    <p>密码：<input type="password" name="password" /></p>
+    <p><input type="submit" value="确认"/></p>
+   </form>
+  </div>
+    
+  </body>
+</html>

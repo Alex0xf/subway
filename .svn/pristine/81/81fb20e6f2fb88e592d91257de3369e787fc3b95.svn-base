@@ -1,0 +1,32 @@
+package com.javasm.subway.user.action;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+/**
+ * 
+ * ClassName: UserLoginServlet 
+ * @Description: 用户登陆的servlet
+ * @author Alex
+ * @date 2018年7月18日
+ */
+public class UserLoginServlet extends HttpServlet {
+
+	private static final long serialVersionUID = 8488806487182625381L;
+
+
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		
+	}
+
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+		
+	}
+
+}
