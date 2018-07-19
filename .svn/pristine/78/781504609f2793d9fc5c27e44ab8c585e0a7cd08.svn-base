@@ -789,13 +789,6 @@ standard deployment descriptor.
     <servlet-name>AdminLoginServlet</servlet-name>
     <servlet-class>com.javasm.subway.admin.action.AdminLoginServlet</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>ChannelServlet</servlet-name>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <description>This is the description of my J2EE component</description>
-    <servlet-class>com.javasm.subway.channel.action.ChannelServlet</servlet-class>
-  </servlet>
-
   <servlet-mapping>
     <servlet-name>BooksListServlet</servlet-name>
     <url-pattern>/books/list</url-pattern>
@@ -811,9 +804,5 @@ standard deployment descriptor.
   <servlet-mapping>
     <servlet-name>AdminLoginServlet</servlet-name>
     <url-pattern>/admin_login</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ChannelServlet</servlet-name>
-    <url-pattern>/ChannelServlet</url-pattern>
   </servlet-mapping>
 </web-app>

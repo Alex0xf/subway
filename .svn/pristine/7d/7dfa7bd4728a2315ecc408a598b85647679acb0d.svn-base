@@ -138,9 +138,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 {data:'bookName'},
                 {data:'authorName'},
                 {data:'ftype_id'},
-                {data:'ftype_name'},
+                {data:'authorName'},
                 {data:'stype_id'},
-                {data:'stype_name'},
+                {data:'stype_id'},
                 {data:'status'},
                 {
                 "targets": -1,

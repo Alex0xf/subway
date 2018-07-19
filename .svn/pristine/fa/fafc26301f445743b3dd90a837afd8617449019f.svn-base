@@ -3,6 +3,7 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+String admin_name=request.getParameter("user_name");
 %>
 
 <!DOCTYPE html>
@@ -61,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <div class="ibox-content">
                         <div class="table-responsive">
                            <div class="">
-				            <h1>欢迎登录</h1>
+				            <h1>${adminname}欢迎登录</h1>
 				            <h3>花生娱乐管理平台</h3>
 				            </div>
                         </div>
@@ -69,6 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
             </div>
             </div>
+         
         </div>
     
      <!--bottom start -->

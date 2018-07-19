@@ -28,7 +28,7 @@ public class BooksAjaxListDataServlet extends HttpServlet {
 	IBooksService booksService=new BooksServiceImpl();
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		        //servlet 返回json数据
-		       String pageNum=request.getParameter("pageNum");
+		        String pageNum=request.getParameter("pageNum");
 		        String pageSize=request.getParameter("pageSize");
 				//查询
 				List<BooksModel> list=booksService.selectBooksList(pageNum, pageSize);

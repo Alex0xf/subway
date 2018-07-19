@@ -23,7 +23,7 @@ public class BooksServiceImpl implements IBooksService{
 			
 		}
 		if(pageSize==null){
-			pageSize=5;
+			pageSize=10;
 		}
 		//servlet传进来的参数 当前第几页 每页多少条
 		int index=PageUtil.getIndeByPageNum(pageNum, pageSize);
@@ -39,7 +39,7 @@ public class BooksServiceImpl implements IBooksService{
 			
 		}
 		if(pageSize==null||pageSize.isEmpty()){
-			pageSize="5";
+			pageSize="10";
 		}
 		if(pageNum==null||pageSize==null||pageNum.isEmpty()||pageSize.isEmpty()){
 				return null;
