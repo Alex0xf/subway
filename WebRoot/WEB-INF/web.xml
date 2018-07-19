@@ -785,6 +785,10 @@ standard deployment descriptor.
     <servlet-name>UserLoginServlet</servlet-name>
     <servlet-class>com.javasm.subway.user.action.UserLoginServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AdminLoginServlet</servlet-name>
+    <servlet-class>com.javasm.subway.admin.action.AdminLoginServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>BooksListServlet</servlet-name>
     <url-pattern>/books/list</url-pattern>
@@ -796,5 +800,9 @@ standard deployment descriptor.
   <servlet-mapping>
     <servlet-name>UserLoginServlet</servlet-name>
     <url-pattern>/user_login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminLoginServlet</servlet-name>
+    <url-pattern>/admin_login</url-pattern>
   </servlet-mapping>
 </web-app>

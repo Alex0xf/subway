@@ -8,7 +8,8 @@ package com.javasm.subway.utills;
  */
 public interface SQLTemple {
    String SelectBooksList="select * from chuangbie_book_ftype limit ?,?";
-   String SelectUserByUserName="select * from pn_user where username=? and password=?";
+   String SelectUserByName="select * from pn_user where username=? and password=?";
+   String SelectAdminByName="select * from pn_admin_user where username=? and password=?";
 	
 	
 }

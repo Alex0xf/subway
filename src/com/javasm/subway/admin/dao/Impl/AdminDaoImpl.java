@@ -1,38 +1,45 @@
-package com.javasm.subway.user.dao.Impl;
+package com.javasm.subway.admin.dao.Impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import com.javasm.subway.user.dao.IUserDao;
-import com.javasm.subway.user.model.UserModel;
+
+import com.javasm.subway.admin.dao.IAdminDao;
+import com.javasm.subway.admin.model.AdminModel;
 import com.javasm.subway.utills.JDBCDruidHelper;
 import com.javasm.subway.utills.SQLTemple;
 
-public class UserDaoImpl implements IUserDao,SQLTemple{
+public class AdminDaoImpl implements IAdminDao,SQLTemple{
 
 	@Override
-	public UserModel selectUser(String userName,String password) {
-		UserModel user = null;
+	public AdminModel selectAdmin(String adminName, String password) {
+		AdminModel admin = null;
 		//JDBC连接
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		try {
 			conn=JDBCDruidHelper.getConnection();
-			ps=conn.prepareStatement(SelectUserByName);
-			ps.setString(1,userName);
+			ps=conn.prepareStatement(SelectAdminByName);
+			ps.setString(1,adminName);
 			ps.setString(2,password);
 			rs=ps.executeQuery();
 			while(rs.next()){
-				user=new UserModel(rs);
+				admin=new AdminModel(rs);
 			    
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return user;
+		return admin;
 	}
 
 }
+
+
+
+
+
+

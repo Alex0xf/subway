@@ -32,6 +32,7 @@ public class UserLoginServlet extends HttpServlet {
 		//传参
 		String userName=request.getParameter("user_name");
 		String password=request.getParameter("password");
+		
 	   //查询
 		UserModel user=userService.selectUser(userName, password);
 		if(user==null){//若查询失败，让用户重新登录
