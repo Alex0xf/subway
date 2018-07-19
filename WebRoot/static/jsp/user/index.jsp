@@ -60,15 +60,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                     <div class="ibox-content">
                         <div class="table-responsive">
-                           <div class="">
+                           <!-- <div class="">
 				            <h1>欢迎登录</h1>
-				            <h3>花生娱乐管理平台</h3>
+				            <h3>花生娱乐管理平台</h3> -->
+				           
 				            </div>
                         </div>
                     </div>
                 </div>
             </div>
             </div>
+         
         </div>
     
      <!--bottom start -->
@@ -77,5 +79,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     </div>
     </div>
+    
+      
+    
   </body>
 </html>

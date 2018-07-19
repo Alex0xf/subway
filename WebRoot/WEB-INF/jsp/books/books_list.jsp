@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%-- <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,6 +23,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        <%@ include file="../common/top.jsp" %>
            <!--top end  -->
            
+           
+          --%>
+           <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
            <!-- 面包屑 start-->
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-lg-10">
@@ -71,9 +74,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <div class="ibox-content">
 
                         <div class="table-responsive">
-                           <div class="">
+                           
             <a onclick="fnClickAddRow();" href="javascript:void(0);" class="btn btn-primary ">添加</a>
-            </div>
+            
                     <table id="editable" class="table table-striped table-bordered table-hover dataTables-example" >
                     <thead>
                     <tr>
@@ -145,7 +148,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 {
                 "targets": -1,
                 "data": null,
-                "defaultContent": "<button>Click!</button>"}
+                "defaultContent": "<button>Delete!</button>"}
                 ]
             });
         });
@@ -161,17 +164,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 "3",
                 "3",
                 "3",
-                "3",
                 "3"
            ] );
         }
         
-        //给操作按钮添加点击事件的方法
+        //给按钮添加点击事件的方法，点击则删除
       $('#editable tbody').on( 'click', 'button', function () {
         //var data = table.row( $(this).parents('tr') ).data();
-        alert( 1 );
+       table.row( $(this).parents('tr') ).remove();
     } );
     </script>
     
-  </body>
-</html>
+<!--   </body>
+</html> -->

@@ -1,14 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
+<%-- <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+%> --%>
 
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <base href="<%=basePath%>">
     
     <title>用户首页</title>
     
@@ -27,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
        <%@ include file="/WEB-INF/jsp/common/top.jsp" %>
            <!--top end  -->
      <!-- 面包屑 start-->
-            <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="row wrapper border-bottom white-bg page-heading bookslist">
                 <div class="col-lg-10">
                     <h3></h3>
                     <ol class="breadcrumb">
@@ -41,7 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <!-- 面包屑 end-->
     
-     <div class="wrapper wrapper-content animated fadeInRight">
+     <div class="wrapper wrapper-content animated fadeInRight" id="welcome">
             <div class="row">
                 <div class="col-lg-12">
                 <div class="ibox float-e-margins">
@@ -63,13 +62,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                            <div class="">
 				            <h1>欢迎登录</h1>
 				            <h3>花生娱乐管理平台</h3>
+				           <%-- <%@include file="/WEB-INF/jsp/books/books_list.jsp"%>  --%>
 				            </div>
                         </div>
                     </div>
                 </div>
             </div>
             </div>
-         
         </div>
     
      <!--bottom start -->

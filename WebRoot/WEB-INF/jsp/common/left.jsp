@@ -66,7 +66,7 @@
                 <li>
                     <a ><i class="fa fa-files-o"></i> <span class="nav-label">图书管理</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="javascript:void(0)" onclick="goPage()">图书列表</a></li>
+                        <li><a href="javascript:void(0)" onclick="gotoBookListPage()">图书列表</a></li>
                     </ul>
                 </li>
                 <li>
@@ -87,12 +87,12 @@
         </div>
     </nav>
     
-    <script type="text/javascript">
-		
-		 
-		 function goPage(){
-		 alert(1)
+  <script >
+		 function gotoBookListPage(){
+		  var url = "books/list";
+			$.get(url, function(data) {
+				$(".bookslist").html(data);
+			}, "html");
+			$("#welcome").remove();
 		 }
-		
-		
 	</script>
