@@ -12,73 +12,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <title>用户首页</title>
     
-	<meta charset="utf-8">
-
-    <%@ include file="/WEB-INF/jsp/common/head.jsp" %>
+	<%@ include file="/WEB-INF/jsp/userCommon/head.jsp" %>
   </head>
   
   <body>
-    <div id="wrapper">
-    <!--left start  -->
-    <%@ include file="/WEB-INF/jsp/common/left.jsp" %>
-     <!--left endt  -->
-     <div id="page-wrapper" class="gray-bg">
-     <!--top start  -->
-       <%@ include file="/WEB-INF/jsp/common/top.jsp" %>
-           <!--top end  -->
-     <!-- 面包屑 start-->
-            <div class="row wrapper border-bottom white-bg page-heading">
-                <div class="col-lg-10">
-                    <h3></h3>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="static/inspinia/index.html">Home</a>
-                        </li>
-                       
-                    </ol>
-                </div>
-                
-            </div>
-            <!-- 面包屑 end-->
+  <header class="bar bar-nav">
+    <h1 class="title">花生地铁</h1>
+  </header>
     
-     <div class="wrapper wrapper-content animated fadeInRight">
-            <div class="row">
-                <div class="col-lg-12">
-                <div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <div class="ibox-tools">
-                            <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
-                            </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="static/inspinia/table_data_tables.html#">
-                                <i class="fa fa-wrench"></i>
-                            </a>
-                            <a class="close-link">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="ibox-content">
-                        <div class="table-responsive">
-                           <!-- <div class="">
-				            <h1>欢迎登录</h1>
-				            <h3>花生娱乐管理平台</h3> -->
-				           
-				            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-         
-        </div>
     
-     <!--bottom start -->
-       <%@ include file="/WEB-INF/jsp/common/bottom.jsp" %>
-     <!--bottom end -->
-    
+ 
+<div class="content native-scroll" id="">
+    <div class="swiper-container swiper-container-horizontal" data-space-between="10">
+      <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+        <div class="swiper-slide swiper-slide-active" style="width: 375px; margin-right: 10px;"><img src="static/images/indexTopBigPictures/1.png" alt="" style="width: 100%"></div>
+        <div class="swiper-slide swiper-slide-next" style="width: 375px; margin-right: 10px;"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i4/TB10rkPGVXXXXXGapXXXXXXXXXX_!!0-item_pic.jpg_640x640q60.jpg" alt="" style="width: 100%"></div>
+        <div class="swiper-slide" style="width: 375px; margin-right: 10px;"><img src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1kQI3HpXXXXbSXFXXXXXXXXXX_!!0-item_pic.jpg_640x640q60.jpg" alt="" style="width: 100%"></div>
+      </div>
+      <div class="swiper-pagination"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
     </div>
-    </div>
+  </div>
+
+
+
+    
+    
+ <nav class="bar bar-tab">
+    <a class="tab-item external active" href="#">
+      <span class="icon icon-home"></span>
+      <span class="tab-label">首页</span>
+    </a>
+   
+    <a class="tab-item external" href="#">
+      <span class="icon icon-browser"></span>
+      <span class="tab-label">WI-FI</span>
+    </a>
+   
+    <a class="tab-item external" href="#">
+      <span class="icon icon-me"></span>
+      <span class="tab-label">我的</span>
+    </a>
+  </nav>
     
       
     
