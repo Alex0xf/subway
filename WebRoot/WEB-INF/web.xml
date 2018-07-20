@@ -795,6 +795,11 @@ standard deployment descriptor.
     <description>This is the description of my J2EE component</description>
     <servlet-class>com.javasm.subway.channel.action.ChannelServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AdminIndexServlet</servlet-name>
+    <servlet-class>com.javasm.subway.admin.action.AdminIndexServlet</servlet-class>
+  </servlet>
+
 
   <servlet-mapping>
     <servlet-name>BooksListServlet</servlet-name>
@@ -815,5 +820,9 @@ standard deployment descriptor.
   <servlet-mapping>
     <servlet-name>ChannelServlet</servlet-name>
     <url-pattern>/ChannelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminIndexServlet</servlet-name>
+    <url-pattern>/admin_index</url-pattern>
   </servlet-mapping>
 </web-app>

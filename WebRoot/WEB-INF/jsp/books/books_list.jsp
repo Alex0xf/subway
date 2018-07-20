@@ -25,6 +25,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
            
            
           --%>
+<%--           <%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%> --%>
+          
            <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
            <!-- 面包屑 start-->
             <div class="row wrapper border-bottom white-bg page-heading">
@@ -32,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <h2>图书管理系统</h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="static/inspinia/index.html">Home</a>
+                            <a href="javascript:void(0)"  onclick="gotoHomePage()" >Home</a>
                         </li>
                         <li>
                             <a>图书管理</a>
@@ -103,9 +108,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
          
         </div>
-        <!--bottom start -->
-       <%@ include file="../common/bottom.jsp" %>
-     <!--bottom end -->
+     
         </div>
         </div>
 
@@ -156,16 +159,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
         //添加按钮
         function fnClickAddRow() {
-            $('#editable').dataTable().fnAddData( [
-                "新的一行",
-                "2",
-                "3",
-                "3",
-                "3",
-                "3",
-                "3",
-                "3"
-           ] );
+             $('#editable').dataTable().fnAddData( [
+               "lalal",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1",
+                "1"
+                ] );       
         }
         
         //给按钮添加点击事件的方法，点击则删除
@@ -173,6 +176,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         //var data = table.row( $(this).parents('tr') ).data();
        table.row( $(this).parents('tr') ).remove();
     } );
+    
+   
+    
     </script>
     
 <!--   </body>

@@ -23,7 +23,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="static/jsp/admin/index.jsp"><i class="fa fa-th-large"></i> <span class="nav-label">首页</span></a>
+                    <a href="javascript:void(0)" onclick="gotoHomePage()"><i class="fa fa-th-large"></i> <span class="nav-label">首页</span></a>
                     
                 </li>
                 <li>
@@ -49,7 +49,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">合作公司管理</span></a>
+                    <a href="javascript:void(0)"><i class="fa fa-flask"></i> <span class="nav-label">合作公司管理</span></a>
                 </li>
                 <li>
                     <a href="table_data_tables.html#"><i class="fa fa-edit"></i> <span class="nav-label">渠道版本</span><span class="fa arrow"></span></a>
@@ -91,8 +91,14 @@
 		 function gotoBookListPage(){
 		  var url = "books/list";
 			$.get(url, function(data) {
-				$(".bookslist").html(data);
+				$(".ajax_replace").html(data);
 			}, "html");
-			$("#welcome").remove();
+		 }
+		 
+		 function gotoHomePage(){
+		  var url = "admin_index";
+			$.get(url, function(data) {
+				$(".ajax_replace").html(data);
+			}, "html");
 		 }
 	</script>

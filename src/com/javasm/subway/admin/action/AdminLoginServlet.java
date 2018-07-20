@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.javasm.subway.admin.model.AdminModel;
 import com.javasm.subway.admin.service.IAdminService;
 import com.javasm.subway.admin.service.Impl.AdminServiceImpl;
+import com.javasm.subway.utills.EncryptByMD5;
 /**
  * 
  * ClassName: AdminLoginServlet 
@@ -32,7 +33,7 @@ public class AdminLoginServlet extends HttpServlet {
 		//传参
 		
 		String adminName=request.getParameter("admin_name");
-		String password=request.getParameter("password");
+		String password=EncryptByMD5.MD5(request.getParameter("password"));//验证是否和加密后的密码一致
 		request.setAttribute("adminname", adminName);
 	   //查询
 		AdminModel admin=adminService.selectAdmin(adminName, password);

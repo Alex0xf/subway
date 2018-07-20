@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
 	<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
 	<style  type="text/css" >
-	html, body, main{
+	html, body{
     font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, Sans-Serif;
     position: relative;
     margin: 0;
@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     .myform{
     position: absolute;
     width:55%;
-    height:700px;
+    height:80%;
     margin-top:8%;
     margin-left:22%;
     
@@ -41,13 +41,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    <div>
-   <h1 class="h1head">花生娱乐 管理平台</h1>
+   <h1 class="h1head">花生地铁App</h1>
    <form class="myform"action="user_login" method="post">
-  <div class="form-group ">
+  <div class="form-group input-lg">
     <label for="user_name">用户名</label>
     <input type="text" class="form-control" id="user_name" name="user_name" placeholder="请输入用户名">
   </div>
-  <div class="form-group">
+  <div class="form-group input-lg">
     <label for="password">密码</label>
     <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
   </div>
