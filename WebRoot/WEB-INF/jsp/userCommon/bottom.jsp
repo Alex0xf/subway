@@ -1,19 +1,18 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
- 
- 
-     <div class="footer">
-            <div class="pull-right">
-                <span class="icon icon-home">首页</span>
-                <span class="icon icon-me">我的</span>
-            </div>
-            
-        </div>
 
-
-<style type="text/css">
-      .footer {
-        height:50px;
-        position:absolute;
-        margin-bottom:0;
-      }
-      </style>   
+ <nav class="bar bar-tab">
+    <a class="tab-item external active" href="javascript:void(0)">
+      <span class="icon icon-home"></span>
+      <span class="tab-label">首页</span>
+    </a>
+   
+    <a class="tab-item external" href="javascript:void(0)">
+      <span class="icon icon-browser"></span>
+      <span class="tab-label">WI-FI</span>
+    </a>
+   
+    <a class="tab-item external" href="javascript:void(0)" onclick="goUserMyPage()">
+      <span class="icon icon-me"></span>
+      <span class="tab-label">我的</span>
+    </a>
+</nav>

@@ -32,11 +32,18 @@ public class UserLoginServlet extends HttpServlet {
 		//传参
 		String userName=request.getParameter("user_name");
 		String password=request.getParameter("password");
+		String page=request.getParameter("page");
 		
 	   //查询
 		UserModel user=userService.selectUser(userName, password);
 		if(user==null){//若查询失败，让用户重新登录
-			request.getRequestDispatcher("static/jsp/user/login.jsp").forward(request, response);
+			System.out.println(page);
+			if("login".equals(page)){
+				request.getRequestDispatcher("static/jsp/user/login.jsp").forward(request, response);
+			}
+			else{request.getRequestDispatcher("static/jsp/user/userMyPage.jsp").forward(request, response);}
+			
+			
 		}
 		else{//登录成功，进入首页
 			request.getRequestDispatcher("static/jsp/user/index.jsp").forward(request, response);
