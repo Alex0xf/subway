@@ -33,6 +33,8 @@ public class BooksDaoImpl implements IBooksDao,SQLTemple{
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			JDBCDruidHelper.close(conn, ps, rs);
 		}
 		
 		return list;

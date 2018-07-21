@@ -30,6 +30,8 @@ public class UserDaoImpl implements IUserDao,SQLTemple{
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			JDBCDruidHelper.close(conn, ps, rs);
 		}
 		
 		return user;

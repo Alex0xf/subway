@@ -31,6 +31,8 @@ public class AdminDaoImpl implements IAdminDao,SQLTemple{
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally{
+			JDBCDruidHelper.close(conn, ps, rs);
 		}
 		
 		return admin;
