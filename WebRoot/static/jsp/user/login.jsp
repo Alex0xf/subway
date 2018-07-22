@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <div class="content-block">
     <div class="row">
       <button type="submit" id="mySubmit"class="button button-big button-fill button-success" value="确认">确认</button>
-      <a id="myReg" href="static/jsp/user/user_register.jsp" target="_blank"><h5>还没有账号？点击这里注册</h5></a>
+     <h5 id="myReg"><a  href="javascript:void(0)" onclick="goUserRegisterPage()">还没有账号？点击这里注册</a></h5>
     </div>
   </div>
 </div>
@@ -90,33 +90,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
   
    </div>
+   
+   
+   <script type="text/javascript">
+   function goUserRegisterPage(){
+       $.post("user_login",{page:"register"},function(data){
+	     $(".userAjax_replace").html(data);
+	     },"html");
+     
+    }
+    </script>
   </body>
   
 </html>
 
 
 
-<!-- <div>
-   <h1 class="h1head">花生地铁App</h1>
-   <form class="myform"action="user_login" method="post">
-  <div class="form-group">
-    <label for="user_name">用户名</label>
-    <input type="text" class="form-control" id="user_name" name="user_name" placeholder="请输入用户名">
-  </div>
-  
-  <div class="form-group">
-    <label for="password">密码</label>
-    <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
-    <p><a href="static/jsp/user/user_register.jsp" target="_blank">微信登录</a></p>
-  </div>
- 
-  <div class="checkbox">
-    <label>
-      <input type="checkbox" name="mycheckbox" checked> 七天内自动登录
-    </label>
-  </div>
-  <button type="submit" class="btn btn-success" value="确认">确认</button>
- <a href="static/jsp/user/user_register.jsp" target="_blank">还没有注册？点击这里注册</a>
-</form>
- 
-  </div> -->

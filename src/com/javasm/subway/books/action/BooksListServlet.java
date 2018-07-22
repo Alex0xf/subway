@@ -20,7 +20,8 @@ public class BooksListServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
      //跳转到列表页
      //分页 1.ajax 2.正常分页 
-	request.getRequestDispatcher("/WEB-INF/jsp/books/books_list.jsp").forward(request,response);
+//request.getRequestDispatcher("/WEB-INF/jsp/books/books_list.jsp").forward(request,response);
+request.getRequestDispatcher("/WEB-INF/jsp/books/test.jsp").forward(request,response);
 	}
 
 

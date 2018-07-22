@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html lang="zh-CN">
   <head>
     
-    <title>用户首页</title>
+    <title>管理员首页</title>
     
 	<meta charset="utf-8">
 

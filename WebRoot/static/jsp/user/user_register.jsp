@@ -10,55 +10,61 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>注册界面</title>
-    
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-	<script type="text/javascript" src="static/js/jquery-3.2.1.min.js"></script>
+    <%@ include file="/WEB-INF/jsp/userCommon/head.jsp" %>
+
 	<style  type="text/css" >
-	html, body, main{
-    font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, Sans-Serif;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    padding-top: 10px;
-    width: 100%;
-    height: 100%;
-    background-color: #092B40;
-    color:white;
-    }
-    .myform{
-    position: absolute;
-    width:55%;
-    height:700px;
-    margin-top:8%;
-    margin-left:22%;
-    
-    }
-    .h1head{
-   text-align: center;
-   margin-top:80px;
-    }
+	 #mySubmit {
+       margin-left:10%;
+       width:80%;
+      }
 	</style>
   </head>
   
   <body>
-     <div>
-     <h1 class="h1head">注册页面</h1>
-   <form class="myform" action="user_login" method="post">
-  <div class="form-group ">
-    <label for="user_name">用户名</label>
-    <input type="text" class="form-control" id="user_name" name="user_name" placeholder="请输入您想使用的用户名">
+  
+  <form action="user_login" method="post">
+   <header class="bar bar-nav">
+  <h1 class='title'>用户注册</h1>
+</header>
+<div class="content">
+  <div class="list-block">
+    <ul>
+     
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">姓名</div>
+            <div class="item-input">
+              <input type="text" name="user_name" placeholder="Your name">
+            </div>
+          </div>
+        </div>
+      </li>
+     
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-password"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">密码</div>
+            <div class="item-input">
+              <input type="password" name="password" placeholder="Password" class="">
+            </div>
+          </div>
+        </div>
+      </li>
+      
+      
+      </ul>
   </div>
-  <div class="form-group">
-    <label for="password">密码</label>
-    <input type="password" class="form-control" id="password1" name="password1" placeholder="请输入密码">
+  <div class="content-block">
+    <div class="row">
+      <button type="submit" id="mySubmit"class="button button-big button-fill button-success" value="确认">确认</button>
+    
+    </div>
   </div>
-  <div class="form-group">
-    <label for="password">确认密码</label>
-    <input type="password" class="form-control" id="password2" name="password2" placeholder="请再次输入密码">
-  </div>
-  <button type="submit" class="btn btn-success" value="确认">确认</button>
+</div>
 </form>
-  </div>
+ 
   </body>
 </html>

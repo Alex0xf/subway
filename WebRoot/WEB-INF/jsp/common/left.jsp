@@ -87,17 +87,18 @@
         </div>
     </nav>
     
-  <script >
+  <script type="text/javascript">
+		
 		 function gotoBookListPage(){
 		  var url = "books/list";
-			$.get(url, function(data) {
+			$.post(url,{}, function(data) {
 				$(".ajax_replace").html(data);
 			}, "html");
 		 }
 		 
 		 function gotoHomePage(){
 		  var url = "admin_index";
-			$.get(url, function(data) {
+			$.post(url,{}, function(data) {
 				$(".ajax_replace").html(data);
 			}, "html");
 		 }

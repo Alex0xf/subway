@@ -1,38 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>用户首页</title>
-    
-	<%@ include file="/WEB-INF/jsp/userCommon/head.jsp" %>
-	  <style type="text/css">
-       .top_menu{
-         position: relative;
-          margin-top: 8.5rem;
-       }
-       #top_menu .bar{
-       position: relative;
-       }
-       .card-content-inner{
-       padding: 0.35rem;
-       }
-      
-      </style>   
-  </head>
-  
-  <body>
-
-<!--AJAX刷新部分  -->
-<div class="userAjax_replace">
-  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
   <!-- 头部 -->
    <header class="bar bar-nav">
     <h1 class="title">花生地铁</h1>
@@ -86,39 +53,3 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   
 </div>
- </div> 
-  <!-- 底部菜单 -->
-
- <%@include file="/WEB-INF/jsp/userCommon/bottom.jsp" %>
-  
-  
-    <script type="text/javascript">
-    $(function() {
-       $.init();
-     });
-     
-     //点击跳转到用户个人中心
-     function goUserMyPage(){
-     //AJAX刷新页面主部分为用户界面
-     $.post("user_login",{page:"userMyPage"},function(data){
-     
-	     $(".userAjax_replace").html(data);
-	     },"html");
-     }
-     
-     //点击跳转到用户首页
-     function goUserIndex(){
- 
-     $.post("user_login",{},function(data){
-     
-	     $(".userAjax_replace").html(data);
-	     },"html");
-     }
-      
-
-     
-     
-    </script>
-
-   </body>
-</html>

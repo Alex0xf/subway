@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 
  <nav class="bar bar-tab">
-    <a class="tab-item external active" href="javascript:void(0)">
+    <a class="tab-item external active" href="javascript:void(0)" onclick="goUserIndex()">
       <span class="icon icon-home"></span>
       <span class="tab-label">首页</span>
     </a>
