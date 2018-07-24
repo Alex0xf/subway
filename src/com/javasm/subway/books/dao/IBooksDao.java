@@ -6,4 +6,10 @@ import com.javasm.subway.books.model.BooksModel;
 
 public interface IBooksDao {
 	List<BooksModel> selectBooksList(int index,int pagesize);
+
+	int deleteBooksById(int id);
+
+	int updateBooksById(int id,int ftypeId,int stypeId,String bookName, String authorName,int status);
+
+	
 }

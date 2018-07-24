@@ -12,7 +12,7 @@ import com.javasm.subway.utills.PageUtil;
  * ClassName: BooksServiceImpl 
  * @Description: 实现接口
  * @author Alex
- * @date 2018年7月17日
+ * @date 2018年7月24日
  */
 public class BooksServiceImpl implements IBooksService{
     IBooksDao booksDao=new BooksDaoImpl();
@@ -47,5 +47,30 @@ public class BooksServiceImpl implements IBooksService{
 			}
 		return selectBooksList(Integer.valueOf(pageNum),Integer.valueOf(pageSize) );
 	}
+
+	
+	@Override
+	public int deleteBooksById(String id) {
+		int deleteResult=0;
+		if(id!=null&&!id.isEmpty()){
+			deleteResult=booksDao.deleteBooksById(Integer.valueOf(id));
+			
+		}
+		return deleteResult;
+	}
+
+	@Override
+	public int updateBooksById(String id, String ftypeId, String stypeId, 
+			String bookName, String authorName, String status) {
+		int updateResult=0;
+		if(id!=null&&!id.isEmpty()){
+			updateResult=booksDao.updateBooksById(Integer.valueOf(id),Integer.valueOf(ftypeId),Integer.valueOf(stypeId),bookName,
+					authorName,Integer.valueOf(status));
+			
+		}
+		return updateResult;
+	}
+
+	
 
 }

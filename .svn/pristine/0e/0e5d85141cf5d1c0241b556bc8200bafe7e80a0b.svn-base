@@ -1,0 +1,159 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <base href="<%=basePath%>">
+  <title>游戏管理页</title>
+    <%@ include file="../common/head.jsp" %>
+    <style type="text/css">
+      .dropdown-menu{
+		min-width: 400px;
+	  }
+	  .halflabel{
+	    width: 30%;
+	  }
+	  select{
+	  	height:30px;
+	  	width: 30%;
+	  	padding-left:10px;
+	  	font-size:18px;
+	  }
+	  option{
+	    font-size:18px;
+	  }
+    </style>
+  </head>
+  
+  <body>  
+    <div id="wrapper">
+      <!--left start  -->
+      <%@ include file="../common/left.jsp" %>
+      <!--left end  -->
+        <div id="page-wrapper" class="gray-bg">
+          <!--top start  -->
+       	  <%@ include file="../common/top.jsp" %>
+          <!--top end  -->
+           
+            <!-- 面包屑 start-->
+            <div class="row wrapper border-bottom white-bg page-heading">
+                <div class="col-lg-10">
+                    <h2>游戏管理系统</h2>
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="static/inspinia/index.html">首页</a>
+                        </li>
+                        <li>
+                            <strong>游戏管理</strong>
+                        </li>
+                        <li class="active">
+                            <a href="games/list">游戏列表</a>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-2">
+
+                </div>
+            </div>
+            <!-- 面包屑 end-->
+			<div class="wrapper wrapper-content animated fadeInRight">
+            <form>
+			  <div class="form-group">
+			    <label for="game_name">游戏名称</label>
+			    <input type="text" class="form-control" id="game_name" name="game_name" placeholder="游戏名称">
+			  </div>
+			  <div class="form-group">
+			    <label for="game_title">游戏标题</label>
+			    <input type="text" class="form-control" id="game_title" name="game_title" placeholder="游戏标题">
+			  </div>
+			  <div class="form-group">
+			    <label for="game_size">游戏大小(单位: M)</label>
+			    <input type="text" class="form-control" id="game_size" name="game_size" placeholder="游戏大小(单位: M)">
+			  </div>
+			  <div class="form-group">
+			    <label for="game_gameIcon">游戏图标</label>
+			    <input type="text" class="form-control" id="game_gameIcon" name="game_gameIcon" placeholder="游戏图标">
+			  </div>
+			  <div class="form-group">
+			    <label for="game_pictures">游戏详情图片</label>
+			    <input type="text" class="form-control" id="game_pictures" name="game_pictures" placeholder="游戏详情图片">
+			  </div>
+			  <div class="form-group">
+			    <label for="game_iosUrl">ios下载地址</label>
+			    <input type="text" class="form-control" id="game_iosUrl" name="game_iosUrl" placeholder="ios下载地址">
+			  </div>
+			  <div class="form-group">
+			    <label for="game_androidUrl">android下载地址</label>
+			    <input type="text" class="form-control" id="game_androidUrl" name="game_androidUrl" placeholder="android下载地址">
+			  </div>
+			  <div class="container-fluid">
+				<div class="row-fluid">
+					<div class="form-inline">
+					<label class="halflabel">推荐类型</label>
+					<label class="halflabel">状态</label>
+					</div>
+					<div class="form-inline">
+						<select name="game_recType">
+						  <option value="1">普通</option>
+						  <option value="2">最新</option>
+						  <option value="3">精选</option>
+						  <option value="4">首页推荐</option>
+						</select>
+						<select name="game_status">
+						  <option value="1">启用</option>
+						  <option value="0">下线</option>
+						</select>
+					</div>
+				</div>
+				<div class="row-fluid">
+					<div class="form-inline">
+					<label class="halflabel">游戏分类</label>
+					<label class="halflabel">平台类型</label>
+					</div>
+					<div class="form-inline">
+						<select name="game_tid" id="game_tid">						  
+						</select>
+						<select name="game_platform">
+						  <option value="1">all</option>
+						  <option value="2">android</option>
+						  <option value="3">ios</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<label for="game_des">游戏描述</label>
+			<textarea class="form-control" rows="3" name="game_des"></textarea>
+			<button type="submit" class="btn btn-info">保存</button>	
+			</form>
+			</div>
+        <!--bottom start -->
+        <%@ include file="../common/bottom.jsp" %>
+        <!--bottom end -->
+        </div>
+        </div>
+	<script type="text/javascript"> 
+	$(document).ready(function(){
+		selectGamesType()
+	});
+	// 加载游戏类型
+	function selectGamesType() {  
+		$.ajax({
+			url : "games/type/JSON", //所需要的列表接口地址  
+			type : "get",  
+			dataType : "json",  
+			success : function(result) { 
+				var h = "";  
+				$.each(result, function(key, value) {
+					h += "<option value='" + value.tid + "'>" + value.typeName + "</option>";  
+				});  
+				$("#game_tid").append(h);//append 添加进去并展示     
+			}  
+		});  
+	}  
+    </script>
+  </body>
+</html>

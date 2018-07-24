@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <form class="myform"action="admin_login" method="post">
   <div class="form-group ">
     <label for="user_name">用户名</label>
-    <input type="text" class="form-control" id="user_name" name="admin_name" placeholder="请输入用户名">
+    <input type="text" class="form-control" id="user_name" name="admin_name" placeholder="请输入用户名" autocomplete="off">
   </div>
   <div class="form-group">
     <label for="password">密码</label>

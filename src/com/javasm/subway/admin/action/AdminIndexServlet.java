@@ -12,7 +12,7 @@ public class AdminIndexServlet extends HttpServlet {
 
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/jsp/common/helloAdmin.jsp").forward(request,response);
+		request.getRequestDispatcher("static/jsp/admin/index.jsp").forward(request, response);
 	}
 
 	

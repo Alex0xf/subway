@@ -8,23 +8,22 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import com.javasm.subway.admin.model.AdminModel;
 
-import com.javasm.subway.user.model.UserModel;
 /**
  * 
- * ClassName: LoginFilter 
- * @Description: 登录过滤器，使用时打开注释
+ * ClassName: AdminLoginFilter 
+ * @Description: 管理员登录过滤器，使用时打开注释
  * @author Alex
- * @date 2018年7月18日
+ * @date 2018年7月23日
  */
 //@WebFilter("/*")
-public class LoginFilter implements Filter {
+public class AdminLoginFilter implements Filter {
 
-    public LoginFilter() {
+    public AdminLoginFilter() {
        
     }
 	public void destroy() {
@@ -42,20 +41,24 @@ public class LoginFilter implements Filter {
 				String url = hrequest.getRequestURI();
 				//System.out.println(url);
 				if(url.indexOf("login") != -1 
+						||url.indexOf("jquery") != -1
 						|| url.endsWith(".css") 
 						|| url.endsWith(".js") 
-						|| url.endsWith(".png")){
+						|| url.endsWith(".png")
+						|| url.endsWith(".jpg")
+						){
 					chain.doFilter(request, response);
 				}else{
 						HttpSession session = hrequest.getSession();
 						//登录的时候  存的个人信息属性名
-						UserModel user = (UserModel)session.getAttribute("user_model");
+						//UserModel user = (UserModel)session.getAttribute("user_model");
+						AdminModel user = (AdminModel)session.getAttribute("admin_model");
 						//如果存在 就说明 已经登录
 						if(user !=null){
 							chain.doFilter(request, response);
 						}else{//如果不存在 说明 未登录
 							//重定向 到  登录页
-							hresponse.sendRedirect(hrequest.getContextPath()+"/static/jsp/userLogin/login.jsp");
+							hresponse.sendRedirect(hrequest.getContextPath()+"/static/jsp/admin/login.jsp");
 						}
 					
 					}
@@ -64,7 +67,7 @@ public class LoginFilter implements Filter {
 	
 
 	public void init(FilterConfig fConfig) throws ServletException {
-		System.out.println("loginFilter被初始化");
+		
 	}
 
 }

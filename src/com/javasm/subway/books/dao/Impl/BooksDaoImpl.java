@@ -40,4 +40,53 @@ public class BooksDaoImpl implements IBooksDao,SQLTemple{
 		return list;
 	}
 
+	@Override
+	public int deleteBooksById(int id) {
+		Connection conn=null;
+		PreparedStatement ps=null;
+        int deleteResult=0;
+		try {
+			conn=JDBCDruidHelper.getConnection();
+			ps=conn.prepareStatement(deleteBooksById);
+			ps.setInt(1, id);
+			deleteResult=ps.executeUpdate();
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		}finally{
+			JDBCDruidHelper.close(conn, ps);
+		}
+		
+		return deleteResult;
+	}
+
+	@Override
+	public int updateBooksById(int id, int ftypeId,int stypeId,String bookName,
+			String authorName, int status) {
+		Connection conn=null;
+		PreparedStatement ps=null;
+        int updateResult=0;
+		try {
+			conn=JDBCDruidHelper.getConnection();
+			ps=conn.prepareStatement(updateBooksById);
+			ps.setString(1, bookName);
+			ps.setString(2, authorName);
+			ps.setInt(3, ftypeId);
+			ps.setInt(4, stypeId);
+			ps.setInt(5, status);
+			ps.setInt(6, id);
+			updateResult=ps.executeUpdate();
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		}finally{
+			JDBCDruidHelper.close(conn, ps);
+		}
+		
+		return updateResult;
+	}
+
+	
+	
+
 }
