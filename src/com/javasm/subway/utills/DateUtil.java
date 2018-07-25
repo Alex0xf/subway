@@ -19,7 +19,7 @@ public class DateUtil {
 	 * @return java.sql.Timestamp  
 	 * @throws
 	 */
-	public Timestamp getTimestamp(Date date) {
+	public static Timestamp getTimestamp(Date date) {
 		return new Timestamp(date.getTime());
 		} 
 }

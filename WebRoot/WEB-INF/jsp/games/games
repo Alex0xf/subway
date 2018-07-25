@@ -1,0 +1,46 @@
+接口名称:分页获取游戏列表
+url:games/select?page=type&start=?&rows=?
+调用方式:GET
+参数:	page:type
+	 	start:分页参数开始行号
+	 	rows:分页参数函数
+结果JSON:
+	{
+		"code":200,
+		"message":"操作成功",
+		"nextPageStatus":true,
+		"data": {...}
+	}
+	{
+		"code":200,
+		"message":"操作成功",
+		"nextPageStatus":false,
+		"data": {...}
+	}
+	{
+		"code":202,
+		"message":"start超出范围",
+		"nextPageStatus":false,
+		"data": ""
+	}
+
+接口名称:游戏详情页接口
+url:games/select?gid=?
+调用方式:GET
+参数:	gid:游戏id
+结果JSON:
+	{
+		"code":200,
+		"message":操作成功",
+		"data": {...}
+	}
+	{
+		"code":201,
+		"message":"游戏已下线",
+		"data": ""
+	}
+	{
+		"code":404,
+		"message":"gid编号错误",
+		"data": ""
+	}

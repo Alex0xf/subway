@@ -14,9 +14,18 @@ public interface SQLTemple {
    String updateBooksById="update pn_book SET book_name=?,author_name=?,ftype_id=?,stype_id=?,STATUS=? where bid=?;";
    String addABook="insert into pn_book (book_id,book_name,author_name,ftype_id,stype_id,status)values(?,?,?,?,?,?);";
 	
-
-   
-   
    String SelectGamesList = "select * from pn_game limit ?,?";
+   String SelectGames = "select * from pn_game where gid = ?";
+   String CountGamesByRecType = "select count(*) as count from pn_game where recType = ?";
+   String SelectGamesByRecPlat = "select * from pn_game where recType = ? and platform = ? limit ?,?";
+   String CountGames = "select count(*) as count from pn_game";
    String SelectGameType = "select * from pn_game_type";
-}
+   String SelectGameTypeByTid = "select typeName from pn_game_type where tid = ?";
+   String InsertGames = "insert into pn_game "
+   		+ "(name, title, size, gameIcon, pictures, iosUrl, androidUrl, recType, status, tid, platform, ctime, des)"
+   		+ " values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+   String DeleteGames = "delete from pn_game where gid = ?";
+   String UpdateGames = "update pn_game set name = ?, title = ?, size = ?, des = ?, gameIcon = ?, "
+   		+ "iosUrl = ?, androidUrl = ?, pictures = ?, status = ?, tid = ?, recType = ?, utime = ?, "
+   		+ "platform = ?, downloadCount = ? where gid = ?";
+   }

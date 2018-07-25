@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <li>
                     <a ><i class="fa fa-pie-chart"></i> <span class="nav-label">游戏管理</span><span class="fa arrow"></span></a>
                      <ul class="nav nav-second-level collapse">
-                        <li><a href="/static/inspinia/form_basic.html">游戏配置</a></li>
+                        <li><a href="games/list">游戏配置</a></li>
                         
                     </ul>
                 </li>

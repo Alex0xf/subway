@@ -4,6 +4,7 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+GamesModel games = (GamesModel)request.getAttribute("games");
 %>
 
 <!DOCTYPE html>
@@ -63,22 +64,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
             <!-- 面包屑 end-->
 			<div class="wrapper wrapper-content animated fadeInRight">
-            <form action="games/add" method="get">
+            <form action="games/update" method="get">
 			  <div class="form-group">
 			    <label for="game_name">游戏名称</label>				
-			    <input type="text" class="form-control" id="game_name" name="game_name" placeholder="游戏名称">
+			    <input type="text" class="form-control" id="game_name" name="game_name" placeholder="游戏名称" value="<%=games.getName() %>">
 			    <label for="game_title">游戏标题</label>
-			    <input type="text" class="form-control" id="game_title" name="game_title" placeholder="游戏标题">
+			    <input type="text" class="form-control" id="game_title" name="game_title" placeholder="游戏标题" value="<%=games.getTitle() %>">
 			    <label for="game_size">游戏大小(单位: M)</label>
-			    <input type="text" class="form-control" id="game_size" name="game_size" placeholder="游戏大小(单位: M)">
+			    <input type="text" class="form-control" id="game_size" name="game_size" placeholder="游戏大小(单位: M)" value="<%=games.getSize() %>">
 			    <label for="game_gameIcon">游戏图标</label>
-			    <input type="text" class="form-control" id="game_gameIcon" name="game_gameIcon" placeholder="游戏图标">
+			    <input type="text" class="form-control" id="game_gameIcon" name="game_gameIcon" placeholder="游戏图标" value="<%=games.getGameIcon() %>">
 			    <label for="game_pictures">游戏详情图片</label>
-			    <input type="text" class="form-control" id="game_pictures" name="game_pictures" placeholder="游戏详情图片">
+			    <input type="text" class="form-control" id="game_pictures" name="game_pictures" placeholder="游戏详情图片" value="<%=games.getPictures() %>">
 			    <label for="game_iosUrl">ios下载地址</label>
-			    <input type="text" class="form-control" id="game_iosUrl" name="game_iosUrl" placeholder="ios下载地址">
+			    <input type="text" class="form-control" id="game_iosUrl" name="game_iosUrl" placeholder="ios下载地址" value="<%=games.getIosUrl() %>">
 			    <label for="game_androidUrl">android下载地址</label>
-			    <input type="text" class="form-control" id="game_androidUrl" name="game_androidUrl" placeholder="android下载地址">
+			    <input type="text" class="form-control" id="game_androidUrl" name="game_androidUrl" placeholder="android下载地址" value="<%=games.getAndroidUrl() %>">
 			  </div>
 			  <div class="container-fluid">
 				<div class="row-fluid">
@@ -116,8 +117,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 			</div>
 			<label for="game_des">游戏描述</label>
-			<textarea class="form-control" rows="3" name="game_des" id="game_des" placeholder="请输入游戏描述"></textarea>
+			<textarea class="form-control" rows="3" name="game_des" id="game_des" placeholder="请输入游戏描述"><%=games.getDes() %></textarea>			
 			<button type="submit" class="btn btn-info">保存</button>	
+			<input type="text" name="game_gid" id="game_gid" value="<%=games.getGid() %>">
+			<input type="text" name="game_downloadCount" id="game_downloadCount" value="<%=games.getDownloadCount() %>">
 			</form>
 			</div>
         <!--bottom start -->
@@ -127,7 +130,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
 	<script type="text/javascript"> 
 	$(document).ready(function(){
-		selectGamesType();	
+		selectGamesType();
+		$('#game_gid').hide();
+		$('#game_downloadCount').hide();
+		var rec="<%=games.getRecType() %>";
+		$("#game_recType").find("option[value="+rec+"]").attr("selected",true);
+		var sta="<%=games.getStatus() %>";
+		$("#game_status").find("option[value="+sta+"]").attr("selected",true);
+		var t="<%=games.getTid() %>";
+		$("#game_tid").find("option[value="+t+"]").attr("selected",true);
+		var plat="<%=games.getPlatform() %>";
+		$("#game_platform").find("option[value="+plat+"]").attr("selected",true);
+		
 	});
 	// 加载游戏类型
 	function selectGamesType() {  
