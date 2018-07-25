@@ -33,13 +33,13 @@
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
                             </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="static/inspinia/table_data_tables.html#">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="/subway/static/inspinia/table_data_tables.html#">
                                 <i class="fa fa-wrench"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-user">
-                                <li><a href="static/inspinia/table_data_tables.html#">Config option 1</a>
+                                <li><a href="/subway/static/inspinia/table_data_tables.html#">Config option 1</a>
                                 </li>
-                                <li><a href="static/inspinia/table_data_tables.html#">Config option 2</a>
+                                <li><a href="/subway/static/inspinia/table_data_tables.html#">Config option 2</a>
                                 </li>
                             </ul>
                             <a class="close-link">

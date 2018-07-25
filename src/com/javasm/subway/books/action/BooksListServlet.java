@@ -23,6 +23,7 @@ public class BooksListServlet extends HttpServlet {
 	IBooksService booksService = new BooksServiceImpl();
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//处理修改图书信息
 		String id2=request.getParameter("book_id");
 		String bookName = request.getParameter("book_name");
 		String authorName = request.getParameter("book_author");
@@ -32,11 +33,9 @@ public class BooksListServlet extends HttpServlet {
 		// String stypeName=request.getParameter("book_stypeName");
 		String status = request.getParameter("book_status");
 		// 更改图书信息
-		System.out.println("id:" + id2 + "-----" + ftypeId + "-----" + stypeId + "-----" + bookName + "-----"
-				+ authorName + "-----" + status);
-		int i = booksService.updateBooksById(id2, ftypeId, stypeId, bookName, authorName, status);
-		System.out.println(i);
+	    booksService.updateBooksById(id2, ftypeId, stypeId, bookName, authorName, status);
 		// 更改完跳回首页
+	   
 		request.getRequestDispatcher("/static/jsp/admin/index.jsp").forward(request, response);
 
 	}

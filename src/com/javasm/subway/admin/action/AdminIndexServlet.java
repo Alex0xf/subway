@@ -12,12 +12,23 @@ public class AdminIndexServlet extends HttpServlet {
 
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("static/jsp/admin/index.jsp").forward(request, response);
+		
 	}
 
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			  doGet(request, response);
+		String page=request.getParameter("page");
+		if(page!=null){
+			switch(page){
+			case"hello":{
+				request.getRequestDispatcher("WEB-INF/jsp/common/helloAdmin.jsp").forward(request, response);
+				break;
+			 }
+			}
+		}else{
+			request.getRequestDispatcher("static/jsp/admin/index.jsp").forward(request, response);
+		}
+		
    }
 
 }
