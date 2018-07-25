@@ -37,6 +37,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     </div>
     </div>
-     
+     <script type="text/javascript">
+	$(function($) {
+		if ("${changePswResult}" != "" && "${changePswResult}" != null) {
+			
+				alert("${changePswResult}");
+		}
+		
+	});
+</script>
   </body>
 </html>

@@ -34,8 +34,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <li>
                     <a href="/static/inspinia/layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">管理中心</span><span class="fa arrow"></span></a>
                      <ul class="nav nav-second-level collapse">
-                        <li><a href="/static/inspinia/toastr_notifications.html">权限管理</a></li>
-                        <li><a href="/static/inspinia/nestable_list.html">菜单管理</a></li>
+                        <li><a href="javascript:void(0)">权限管理</a></li>
+                        <li><a href="javascript:void(0)">菜单管理</a></li>
                         
                     </ul>
                 </li>

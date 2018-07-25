@@ -36,7 +36,7 @@
                     </div>
                     <div class="ibox-content">
                         <div class="table-responsive">
-                            <form action='admin_login?page=doChangeAdminPsw' method="post" ><!-- onsubmit="return isPswIeagle()" -->
+                            <form id="changeAdminPswTb"action='admin_login?page=doChangeAdminPsw' method="post"><!--  onsubmit="return isPswIeagle()" -->
 				              <div class="form-group">
 							    <label>用户名</label>
 							    <input type="text" class="form-control" name="admin_name" value="${admin_model.adminName}" readonly="readonly">
@@ -63,8 +63,26 @@
         </div>
 <!-- <script type="text/javascript">
  function isPswIeagle(){
-   if("${admin_model.password}"!=EncryptByMD5.MD5($("#before_password").val())){
-     alert("输入密码错误");
+   alert(EncryptByMD5.MD5($("#before_password").val()));
+   var before_pass=EncryptByMD5.MD5($("#before_password").val());
+  
+   if("${admin_model.password}"==before_pass){//若输入原密码成功 判断两次新密码是否输入一致
+      
+      if($("#before_password").val()==$("#before_password").val()){
+      var param = $("#changeAdminPswTb").serialize();
+      /* param = JSON.toString(); */
+        $.post("admin_login",{param,page:"doChangeAdminPsw"},function(data){
+        
+        
+        },"html");
+      
+      }else{
+      alert("两次密码输入不一致");
+      }
+      
+     return false;
+   }else{
+     alert("输入原密码错误");
      return false;
    }
      
