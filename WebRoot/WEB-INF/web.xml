@@ -789,16 +789,81 @@ standard deployment descriptor.
     <servlet-name>AdminLoginServlet</servlet-name>
     <servlet-class>com.javasm.subway.admin.action.AdminLoginServlet</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>ChannelServlet</servlet-name>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <description>This is the description of my J2EE component</description>
-    <servlet-class>com.javasm.subway.channel.action.ChannelServlet</servlet-class>
-  </servlet>
+
   <servlet>
     <servlet-name>AdminIndexServlet</servlet-name>
     <servlet-class>com.javasm.subway.admin.action.AdminIndexServlet</servlet-class>
   </servlet>
+ <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChannelServlet</servlet-name>
+    <servlet-class>com.javasm.subway.channel.action.ChannelServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SecondTypeNameServlet</servlet-name>
+    <servlet-class>com.javasm.subway.channel.action.SecondTypeNameServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>AddChannelServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.javasm.subway.channel.action.AddChannelServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ChannelTypeControlServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.javasm.subway.channel.action.ChannelTypeControlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddChannelTypeServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.javasm.subway.channel.action.AddChannelTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SharePageServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.javasm.subway.channel.action.SharePageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RefreshChannelTypeControlServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.javasm.subway.channel.action.RefreshChannelTypeControlServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SharePageUpServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.javasm.subway.channel.action.SharePageUpServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdateChannelTypeServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.javasm.subway.channel.action.UpdateChannelTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SureUpdataChannelTypeServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.javasm.subway.channel.action.SureUpdataChannelTypeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DeleteChannelTypeServlet</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.javasm.subway.channel.action.DeleteChannelTypeServlet</servlet-class>
+  </servlet>
+
+
+
 
 
   <servlet-mapping>
@@ -817,12 +882,53 @@ standard deployment descriptor.
     <servlet-name>AdminLoginServlet</servlet-name>
     <url-pattern>/admin_login</url-pattern>
   </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>AdminIndexServlet</servlet-name>
+    <url-pattern>/admin_index</url-pattern>
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ChannelServlet</servlet-name>
     <url-pattern>/ChannelServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>AdminIndexServlet</servlet-name>
-    <url-pattern>/admin_index</url-pattern>
+    <servlet-name>SecondTypeNameServlet</servlet-name>
+    <url-pattern>/SecondTypeNameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddChannelServlet</servlet-name>
+    <url-pattern>/AddChannelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChannelTypeControlServlet</servlet-name>
+    <url-pattern>/ChannelTypeControlServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddChannelTypeServlet</servlet-name>
+    <url-pattern>/AddChannelTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SharePageServlet</servlet-name>
+    <url-pattern>/SharePageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RefreshChannelTypeControlServlet</servlet-name>
+    <url-pattern>/RefreshChannelTypeControlServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SharePageUpServlet</servlet-name>
+    <url-pattern>/SharePageUpServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateChannelTypeServlet</servlet-name>
+    <url-pattern>/UpdateChannelTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SureUpdataChannelTypeServlet</servlet-name>
+    <url-pattern>/SureUpdataChannelTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteChannelTypeServlet</servlet-name>
+    <url-pattern>/DeleteChannelTypeServlet</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -17,6 +17,30 @@
 <meta charset="utf-8">
 
 <%@ include file="/WEB-INF/jsp/common/head.jsp"%>
+<script type="text/javascript">
+	$(function($) {
+		if ("${updateSuccess}" != "" && "${updateSuccess}" != null) {
+			if ("${updateSuccess}" == "true") {
+
+				alert("修改成功(*^_^*)");
+			} else {
+				alert("修改失败(⊙﹏⊙)")
+			}
+		}
+		console.log("输出啊:"+"${deleteSuccess}")
+		if ("${deleteSuccess}" != "" && "${deleteSuccess}" != null) {
+			if ("${deleteSuccess}" == "true") {
+
+				alert("删除成功(*^_^*)");
+			} else {
+				alert("删除失败(⊙﹏⊙)")
+			}
+		}
+	});
+</script>
+
+
+
 </head>
 
 <body>
@@ -33,7 +57,7 @@
 		<div class="row wrapper border-bottom white-bg page-heading"
 			style="margin-left:9px">
 			<div class="col-lg-10" style="margin-left:-9px">
-				<h3 class=".topName">首页&nbsp;&nbsp;/&nbsp;&nbsp;渠道管理</h3>
+				<h3 class=".topName">首页&nbsp;&nbsp;/&nbsp;&nbsp;渠道分类管理</h3>
 				<ol class="breadcrumb">
 					<li><a href="static/inspinia/index.html"></a></li>
 
@@ -47,9 +71,8 @@
 				<div class="col-lg-12">
 					<div class="ibox float-e-margins">
 						<div class="ibox-title">
-							<h3 style="margin-left:5px">渠道管理</h3>
+							<h3 style="margin-left:5px">渠道分类管理</h3>
 							<!-- 							<div class="ibox-tools"> -->
-
 							<!-- 								<a class="collapse-link"> <i class="fa fa-chevron-up"></i> -->
 							<!-- 								</a> <a class="dropdown-toggle" data-toggle="dropdown" -->
 							<!-- 									href="static/inspinia/table_data_tables.html#"> <i -->
@@ -69,108 +92,96 @@
 
 							<div class="table-responsive">
 								<div class="">
-									<a onclick="addchannel();" href="javascript:void(0);"
-										class="btn btn-primary ">添加渠道</a>
+									<a onclick="addchanneltype();" href="javascript:void(0);"
+										class="btn btn-primary ">添加渠道分类</a>
 								</div>
-								<!-- 									搜索栏 -->
-								<form class="form-inline">
-									<div class="row">
-										<div class="col-md-1">
-
-											<div class="btn-group">
-												<button type="button"
-													class="btn btn-default dropdown-toggle "
-													data-toggle="dropdown" aria-haspopup="true"
-													aria-expanded="false" style="width:162px">
-													<span class="">全部</span> <span class="caret"></span>
-												</button>
-												<ul class="dropdown-menu">
-													<c:forEach items="${topTypeNameList }" var="i">
-														<li><a href="JavaScript:void(0)"
-															id="${i.topTypeName}"
-															onclick="selectSecondTypeName('${i.topTypeName}');"
-															style="text-align:center">${i.topTypeName} </a></li>
-													</c:forEach>
-												</ul>
-											</div>
-										</div>
-										<div class="col-md-1" style="margin-left:45px">
-
-											<div class="btn-group">
-												<button type="button"
-													class="btn btn-default dropdown-toggle "
-													data-toggle="dropdown" aria-haspopup="true"
-													aria-expanded="false" style="width:162px">
-													二级 <span class="caret"></span>
-												</button>
-												<ul class="dropdown-menu second_search">
-												</ul>
-											</div>
-
-
-										</div>
-
-										<div class="col-md-4" style="margin-left:45px">
-											<div class="form-group">
-												<input style="width:500px" type="text" class="form-control"
-													id="exampleInputName2" placeholder="渠道号">
-											</div>
-										</div>
-
-										<button type="submit" class=" btn btn-success ">
-											<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-											搜索
-										</button>
-
-
-									</div>
-								</form>
 								<table id="editable"
 									class="table table-striped table-bordered table-hover dataTables-example">
 									<thead>
 										<tr>
-											<th class="text-center">一级分类</th>
-											<th class="text-center">二级分类</th>
-											<th class="text-center">渠道号</th>
-											<th class="text-center">渠道下载地址</th>
-											<th class="text-center">产品名称</th>
-											<th class="text-center">显示名称</th>
-											<th class="text-center">创建时间</th>
-											<th class="text-center">操作</th>
+											<th class="text-center ">一级分类</th>
+											<th class="text-center ">父级</th>
+											<th class="text-center ">标签排序</th>
+											<th class="text-center ">创建时间</th>
+											<th class="text-center ">操作</th>
 										</tr>
 									</thead>
-									<tbody>
-										<c:forEach items="${ChannelControlModelList}" var="i"
-											begin="0" end="${size-1}">
+									<!-- 									=================================== -->
+
+									<%-- 									<c:forEach items="${ChannelControlModelList}" var="i" begin="0" --%>
+									<%-- 										end="${size-1}"> --%>
+									<!-- 										<tr> -->
+									<%-- 											<td class="text-center">${i.topTypeName}</td> --%>
+									<%-- 											<td class="text-center">${i.secondTypeName }</td> --%>
+									<%-- 											<td class="text-center">${i.code}</td> --%>
+									<%-- 											<td class="text-center">${i.downloadurl}</td> --%>
+									<%-- 											<td class="text-center">${i.name }</td> --%>
+									<%-- 											<td class="text-center">${i.viewname }</td> --%>
+									<%-- 											<td class="text-center">${i.ctime }</td> --%>
+									<!-- 											<td><div> -->
+									<!-- 													<button type="button" -->
+									<!-- 														class="add_upload_address btn btn-success btn-xs"> -->
+									<!-- 														<span class="glyphicon glyphicon-edit" aria-hidden="true"></span> -->
+									<!-- 														添加下载地址 -->
+									<!-- 													</button> -->
+									<!-- 												</div> -->
+									<!-- 												<div class="col-md-offset-3"> -->
+									<!-- 													<button type="button" -->
+									<!-- 														class="delete_channel btn btn-danger btn-xs " -->
+									<!-- 														onclick="delete_channel(this);"> -->
+									<!-- 														<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> -->
+									<!-- 														删除 -->
+									<!-- 													</button> -->
+									<!-- 												</div></td> -->
+									<!-- 										</tr> -->
+									<%-- 									</c:forEach> --%>
+
+
+
+									<!-- 									======================================================================== -->
+									<tbody class="ChannelTypeTable">
+										<c:forEach items="${list}" var="i" begin="0" end="${size-1}">
 											<tr>
-												<td class="text-center">${i.topTypeName}</td>
-												<td class="text-center">${i.secondTypeName }</td>
-												<td class="text-center">${i.code}</td>
-												<td class="text-center">${i.downloadurl}</td>
-												<td class="text-center">${i.name }</td>
-												<td class="text-center">${i.viewname }</td>
-												<td class="text-center">${i.ctime }</td>
-												<td><div>
-														<button type="button"
-															class="add_upload_address btn btn-success btn-xs">
+												<td class="text-center ">${i.typeName}</td>
+												<c:choose>
+													<c:when test="${i.fatherName eq null}">
+														<td class="text-center ">无</td>
+													</c:when>
+													<c:when test="${empty i.fatherName}">
+														<td class="text-center ">无</td>
+													</c:when>
+													<c:otherwise>
+														<td class="text-center ">${i.fatherName}</td>
+													</c:otherwise>
+												</c:choose>
+												<td class="text-center ">${i.sort}</td>
+												<td class="text-center ">${i.ctime }</td>
+												<td>
+
+													<div class="col-md-2 col-md-offset-4">
+														<button type="button" onclick="updateChannelType(this);"
+															class="add_upload_address btn btn-success btn-xs"
+															value='{"ctime":"${i.ctime }"}'>
 															<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-															添加下载地址
+															修改
 														</button>
 													</div>
-													<div class="col-md-offset-3">
+													<div class="col-md-2">
 														<button type="button"
-															class="delete_channel btn btn-danger btn-xs "
-															onclick="delete_channel(this);">
+															class="delete_channel btn btn-danger btn-xs"
+															onclick="delete_channel(this);" id=""  value='{"ctime":"${i.ctime }"}'>
 															<span class="glyphicon glyphicon-trash"
 																aria-hidden="true"></span> 删除
 														</button>
-													</div></td>
+													</div>
+												</td>
 											</tr>
 										</c:forEach>
 
 									</tbody>
 
 								</table>
+
 								<!-- 								分页 -->
 								<div>
 									<form class="form-inline" style="margin-left:936px">
@@ -188,10 +199,10 @@
 														onclick="pageUp();"> <span aria-hidden="true">&laquo;</span>
 													</a></li>
 													<c:forEach begin="0" end="4" var="i">
-														<li  id="${i+1}" class="mm"><a href="JavaScript:void(0)"
-															onclick="pageNum(this);">${i+1}</a></li>
+														<li id="${i+1}" class="mm"><a
+															href="JavaScript:void(0)" onclick="pageNum(this);">${i+1}</a></li>
 													</c:forEach>
-													<li ><a href="JavaScript:void(0)" aria-label="Next"
+													<li><a href="JavaScript:void(0)" aria-label="Next"
 														onclick="pageDown();"> <span aria-hidden="true">&raquo;</span>
 													</a></li>
 
@@ -231,7 +242,7 @@
 											<span>条</span>
 										</div>
 										<div class="form-group">
-											<span>共 <span >${count}</span> 页
+											<span>共 <span id="countSpan">${count}</span> 页
 											</span>
 										</div>
 									</form>

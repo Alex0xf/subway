@@ -59,8 +59,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <li>
                     <a href="/static/inspinia/table_data_tables.html#"><i class="fa fa-edit"></i> <span class="nav-label">渠道版本</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">
-                        <li><a href="/static/inspinia/form_basic.html">渠道管理</a></li>
-                        <li><a href="/static/inspinia/form_advanced.html">渠道分类管理</a></li>
+                         <li><a href="JavaScript:void(0)" onclick="loadchannel();">渠道管理</a></li>
+                        <li><a href="JavaScript:void(0)" onclick="loadchanneltype();">渠道分类管理</a></li>
                         
                     </ul>
                 </li>

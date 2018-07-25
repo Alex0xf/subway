@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>"> 
 
     <%@ include file="/WEB-INF/jsp/common/head.jsp" %>
-    
+    <script src="static/jsp/channel/channel.js"></script>
   </head>
   
   <body id="my_body">

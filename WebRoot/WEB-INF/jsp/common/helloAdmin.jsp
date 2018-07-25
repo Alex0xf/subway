@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
- <div class="ajax_replace">   
+ <div class="ajax_replace channel">   
      <!-- 面包屑 start-->
             <div class="row wrapper border-bottom white-bg page-heading ">
                 <div class="col-lg-10">
