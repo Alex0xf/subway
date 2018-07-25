@@ -48,11 +48,11 @@
                         </div>
                     </div>
                     
-                    <%--更改图书信息时用ajax刷新 start --%>
-                    <div class="ajax_book_update">
+                    <%--更改/添加图书信息时用ajax刷新 start --%>
+                    <div class="ajax_book_updateORadd">
                     <div class="ibox-content">
                         <div class="table-responsive">     
-            <button class="btn btn-primary dim" onclick="fnClickAddRow();"><i class="fa fa-plus-circle"> 添加</i></button>
+            <button class="btn btn-primary dim" id="booklist_add_button"><i class="fa fa-plus-circle"> 添加</i></button>
             <button class="btn btn-danger dim" id="booklist_delete_button" ><i class="fa fa-warning"> 删除</i></button> 
             <button class="btn btn-success dim" id="booklist_update_button" ><i class="fa fa-paste"> 修改</i></button> 
             
@@ -192,40 +192,35 @@
         alert("删除成功");
         } 
          }
-      
-      
+
     } );
            
-           //修改指定行的图书信息
+      //修改指定行的图书信息
      $('#booklist_update_button').click( function () { 
         if(thisbookID==null){
          alert("请选择要修改的行");
          }else{ 
       $.post("books/list",{page:"update",book_id:thisbookID,book_name:thisbookname,book_author:thisauthor,book_ftypeId:thisftypeId,book_ftypename:thisftypeName,book_stypeId:thisstypeId,book_stypeName:thisstypeName,book_status:thisstatus},function(data){
-          $(".ajax_book_update").html(data);
+          $(".ajax_book_updateORadd").html(data);
         },"html"); 
         }
         
     } );
            
+           
+       //增加一条图书记录
+        $('#booklist_add_button').click( function () { 
+        
+      $.post("books/list",{page:"add"},function(data){
+          $(".ajax_book_updateORadd").html(data);
+        },"html"); 
+        
+        
+    } );
+       
           
         });
     
-        
- function fnClickAddRow() {
-            $('#editable').dataTable().fnAddData( [
-                "Custom row",
-                "New row",
-                "New row",
-                "New row",
-                "New row",
-                "New row",
-                "New row",
-                "New row" ] ); 
- 
-        }  
-           
- 
    </script>
    
      

@@ -12,7 +12,11 @@ public interface SQLTemple {
    String SelectAdminByName="select * from pn_admin_user where username=? and password=?";
    String deleteBooksById="delete  from pn_book where bid=?";
    String updateBooksById="update pn_book SET book_name=?,author_name=?,ftype_id=?,stype_id=?,STATUS=? where bid=?;";
+   String addABook="insert into pn_book (book_id,book_name,author_name,ftype_id,stype_id,status)values(?,?,?,?,?,?);";
 	
+
+   
+   
    String SelectGamesList = "select * from pn_game limit ?,?";
    String SelectGameType = "select * from pn_game_type";
 }

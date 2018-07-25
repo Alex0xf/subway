@@ -6,7 +6,7 @@ String bookid=request.getParameter("book_id");
  <div class="ibox-content">
    <div class="table-responsive">     
 
-         <form action='books/list?' method="get">
+         <form action='books/list?page=updateByBookId' method="post">
 			  <div class="form-group">
 			    <label>ID</label>
 			    <input type="text" class="form-control" name="book_id" readonly="readonly"  value="${bookId}">

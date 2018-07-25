@@ -15,7 +15,8 @@ public interface IBooksService {
 	List<BooksModel> selectBooksList(Integer pageNum,Integer pageSize);
 	List<BooksModel> selectBooksList(String pageNum,String pageSize);
 	int deleteBooksById(String id);
-	int updateBooksById(String id, String ftypeId, String stypeId, String bookName,
-			String authorName, String status); 
+	int updateBooksById(String id, String ftypeId, String stypeId, String bookName,String authorName, String status);
+	int addABook(String true_book_id,String ftypeId, String stypeId, String bookName,String authorName, String status);
+	
 	
 }

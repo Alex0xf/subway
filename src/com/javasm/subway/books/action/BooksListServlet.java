@@ -15,7 +15,7 @@ import com.javasm.subway.books.service.Impl.BooksServiceImpl;
  * 
  * @Description:
  * @author Alex
- * @date 2018年7月24日
+ * @date 2018年7月25日
  */
 public class BooksListServlet extends HttpServlet {
 
@@ -23,21 +23,7 @@ public class BooksListServlet extends HttpServlet {
 	IBooksService booksService = new BooksServiceImpl();
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//处理修改图书信息
-		String id2=request.getParameter("book_id");
-		String bookName = request.getParameter("book_name");
-		String authorName = request.getParameter("book_author");
-		String ftypeId = request.getParameter("book_ftypeId");
-		// String ftypeName=request.getParameter("book_ftypename");
-		String stypeId = request.getParameter("book_stypeId");
-		// String stypeName=request.getParameter("book_stypeName");
-		String status = request.getParameter("book_status");
-		// 更改图书信息
-	    booksService.updateBooksById(id2, ftypeId, stypeId, bookName, authorName, status);
-		// 更改完跳回首页
-	   
-		request.getRequestDispatcher("/static/jsp/admin/index.jsp").forward(request, response);
-
+		System.out.println("doGet");
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -48,14 +34,15 @@ public class BooksListServlet extends HttpServlet {
 		request.setAttribute("bookId", id);
 		// BooksModel books=booksService.selectBooksById(id);
 		if (page != null) {
-			System.out.println(page);
+			//System.out.println(page);
 			switch (page) {// 根据传进来的参数进行对应的操作（增加/删除/修改）
 			case "add": {
-				// request.getRequestDispatcher("static/jsp/Books/login.jsp").forward(request,
-				// response);
+				// 转发到增加的的页面
+				request.getRequestDispatcher("/WEB-INF/jsp/books/books_add.jsp").forward(request, response);
 				break;
 			}
 			case "delete": {
+				//删除一条图书记录
 				booksService.deleteBooksById(id);
 				break;
 			}
@@ -64,15 +51,7 @@ public class BooksListServlet extends HttpServlet {
 				request.setAttribute("bookName", request.getParameter("book_name"));
 				request.setAttribute("author", request.getParameter("book_author"));
 				request.setAttribute("ftypeId", request.getParameter("book_ftypeId"));
-				/*
-				 * request.setAttribute("ftypeName",request.getParameter(
-				 * "book_ftypename"));
-				 */
 				request.setAttribute("stypeId", request.getParameter("book_stypeId"));
-				/*
-				 * request.setAttribute("stypeName",request.getParameter(
-				 * "book_stypeName"));
-				 */
 				switch (request.getParameter("book_status")) {
 				case "连载": {
 					request.setAttribute("status", 1);
@@ -90,28 +69,43 @@ public class BooksListServlet extends HttpServlet {
 				request.getRequestDispatcher("/WEB-INF/jsp/books/books_list.jsp").forward(request, response);
 				break;
 			}
+			case "updateByBookId": {
+				//处理修改图书信息
+				id=request.getParameter("book_id");
+				String bookName = request.getParameter("book_name");
+				String authorName = request.getParameter("book_author");
+				String ftypeId = request.getParameter("book_ftypeId");
+				// String ftypeName=request.getParameter("book_ftypename");
+				String stypeId = request.getParameter("book_stypeId");
+				// String stypeName=request.getParameter("book_stypeName");
+				String status = request.getParameter("book_status");
+				// 更改图书信息
+			    booksService.updateBooksById(id, ftypeId, stypeId, bookName, authorName, status);
+			    // 更改完跳回首页
+				request.getRequestDispatcher("/static/jsp/admin/index.jsp").forward(request, response);
+				break;
+				
+			}
+			case "addABook":{
+				//处理增加的图书信息
+				String true_book_id = request.getParameter("true_book_id");
+				String bookName = request.getParameter("book_name");
+				String authorName = request.getParameter("book_author");
+				String ftypeId = request.getParameter("book_ftypeId");
+				String stypeId = request.getParameter("book_stypeId");
+				String status = request.getParameter("book_status");
+				// 增加图书信息
+			    booksService.addABook(true_book_id,ftypeId, stypeId, bookName, authorName, status);
+			    // 添加完跳回首页
+				request.getRequestDispatcher("/static/jsp/admin/index.jsp").forward(request, response);
+				break;
+			}
 			default: {
 				request.getRequestDispatcher("/WEB-INF/jsp/books/books_list.jsp").forward(request, response);
 			}
 			
 		  }
-		}/*else{//若page为空 则是update以post方式提交的表单 因为post不能传递参数所以为空  进行update操作
-		    String id2=request.getParameter("book_id");
-			String bookName = request.getParameter("book_name");
-			String authorName = request.getParameter("book_author");
-			String ftypeId = request.getParameter("book_ftypeId");
-			// String ftypeName=request.getParameter("book_ftypename");
-			String stypeId = request.getParameter("book_stypeId");
-			// String stypeName=request.getParameter("book_stypeName");
-			String status = request.getParameter("book_status");
-			// 更改图书信息
-			System.out.println("id:" + id2 + "-----" + ftypeId + "-----" + stypeId + "-----" + bookName + "-----"
-					+ authorName + "-----" + status);
-			int i = booksService.updateBooksById(id2, ftypeId, stypeId, bookName, authorName, status);
-			System.out.println(i);
-			// 更改完跳回首页
-			request.getRequestDispatcher("/WEB-INF/jsp/books/books_list.jsp").forward(request, response);
-		}*/
+		}
 
 	}
 

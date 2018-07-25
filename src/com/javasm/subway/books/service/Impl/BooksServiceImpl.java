@@ -71,6 +71,17 @@ public class BooksServiceImpl implements IBooksService{
 		return updateResult;
 	}
 
+	@Override
+	public int addABook(String true_book_id,String ftypeId, String stypeId, String bookName, String authorName, String status) {
+		int addResult=0;
+		if(bookName!=null&&!bookName.isEmpty()&&authorName!=null&&!authorName.isEmpty()){
+			addResult=booksDao.addABook(Integer.valueOf(true_book_id),Integer.valueOf(ftypeId),Integer.valueOf(stypeId),bookName,
+					authorName,Integer.valueOf(status));
+			
+		}
+		return addResult;
+	}
+
 	
 
 }
