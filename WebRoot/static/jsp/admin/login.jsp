@@ -51,11 +51,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <label for="password">密码</label>
     <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
   </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox" name="adminCheckbox" checked> 本次操作记住密码
-    </label>
-  </div>
   <button type="submit" class="btn btn-success" value="确认">确认</button>
  
 </form>

@@ -13,12 +13,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <img alt="image" class="img-circle" src="/subway/static/inspinia/img/profile_small.jpg" />
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="/static/inspinia/table_data_tables.html#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${adminname}</strong>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${admin_model.adminName}</strong>
                              </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="javascript:void(0)">Profile</a></li>
                             <li><a href="javascript:void(0)">Contacts</a></li>
-                            <li><a href="javascript:void(0)">Mailbox</a></li>
+                            <li><a href="javascript:void(0)" onclick="changeAdminPsd()">ChangePassword</a></li>
                             <li class="divider"></li>
                             <li><a href="static/jsp/admin/login.jsp">Logout</a></li>
                         </ul>
@@ -104,6 +104,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		 function gotoHomePage(){
 		  var url = "admin_index";
 			$.post(url,{page:"hello"}, function(data) {
+				$(".ajax_replace").html(data);
+			}, "html");
+		 }
+		 
+		 function changeAdminPsd(){
+		   $.post("admin_login",{page:"changePsw",admin:'${adminname}'}, function(data) {
 				$(".ajax_replace").html(data);
 			}, "html");
 		 }

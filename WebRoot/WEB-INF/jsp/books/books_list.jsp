@@ -205,7 +205,7 @@
            
        //增加一条图书记录
         $('#booklist_add_button').click( function () { 
-      $.post("books/list",{page:"add",adminname:"${adminname}"},function(data){
+           $.post("books/list",{page:"add",adminname:"${adminname}"},function(data){
           $(".ajax_book_updateORadd").html(data);
         },"html"); 
         

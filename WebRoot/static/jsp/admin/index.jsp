@@ -3,7 +3,6 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-
 %>
 
 <!DOCTYPE html>
@@ -38,5 +37,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     </div>
     </div>
+     
   </body>
 </html>

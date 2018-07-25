@@ -27,4 +27,17 @@ public class AdminServiceImpl implements IAdminService{
 
 		return null;
 	}
+
+
+
+	@Override
+	public int updateAdminPsw(int uid, String adminPsw) {
+		 if(uid<0||adminPsw.isEmpty()){
+				
+			}else{
+				return adminDao.updateAdminPsw(uid,adminPsw);
+			}
+
+			return 0;
+	}
 }

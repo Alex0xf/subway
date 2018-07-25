@@ -4,7 +4,7 @@
  <div class="ibox-content">
    <div class="table-responsive">     
 
-         <form action='books/list?page=updateByBookId&&adminname=${adminname}' method="post">
+         <form action='books/list?page=updateByBookId&&adminname=${admin_model.adminName}' method="post">
 			  <div class="form-group">
 			    <label>ID</label>
 			    <input type="text" class="form-control" name="book_id" readonly="readonly"  value="${bookId}">

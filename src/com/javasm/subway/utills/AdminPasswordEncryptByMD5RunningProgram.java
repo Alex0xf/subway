@@ -9,7 +9,7 @@ package com.javasm.subway.utills;
 public class AdminPasswordEncryptByMD5RunningProgram {
 
 	public static void main(String[] args) {
-		String password="root";
+		String password="xiafei";
 		String MD5password=EncryptByMD5.MD5(password);
 		System.out.println(MD5password);
 		
