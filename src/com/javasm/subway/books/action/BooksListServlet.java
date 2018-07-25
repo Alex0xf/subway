@@ -32,7 +32,15 @@ public class BooksListServlet extends HttpServlet {
 		String page = request.getParameter("page");
 		String id = request.getParameter("book_id");// 需要删除或修改的图书id
 		request.setAttribute("bookId", id);
-		// BooksModel books=booksService.selectBooksById(id);
+	
+		String admin1=request.getParameter("adminname");
+		String admin2=request.getParameter("admin");
+		if(admin1!=null){
+			request.setAttribute("adminname", admin1);
+		}if(admin2!=null){
+			request.setAttribute("adminname", admin2);
+		}
+		/*System.out.println("==="+admin1+"==="+admin2);*/
 		if (page != null) {
 			//System.out.println(page);
 			switch (page) {// 根据传进来的参数进行对应的操作（增加/删除/修改）
@@ -46,7 +54,8 @@ public class BooksListServlet extends HttpServlet {
 				booksService.deleteBooksById(id);
 				break;
 			}
-			case "update": {// 转发到更改的页面
+			case "update": {
+				// 转发到更改的页面
 				// 为了方便修改和避免信息遗忘，将选中的信息预先填入修改页面，图书ID不可更改
 				request.setAttribute("bookName", request.getParameter("book_name"));
 				request.setAttribute("author", request.getParameter("book_author"));
@@ -82,6 +91,7 @@ public class BooksListServlet extends HttpServlet {
 				// 更改图书信息
 			    booksService.updateBooksById(id, ftypeId, stypeId, bookName, authorName, status);
 			    // 更改完跳回首页
+			    
 				request.getRequestDispatcher("/static/jsp/admin/index.jsp").forward(request, response);
 				break;
 				
@@ -97,6 +107,8 @@ public class BooksListServlet extends HttpServlet {
 				// 增加图书信息
 			    booksService.addABook(true_book_id,ftypeId, stypeId, bookName, authorName, status);
 			    // 添加完跳回首页
+			   /* System.out.println("----"+admin1);
+			    System.out.println("----"+admin2);*/
 				request.getRequestDispatcher("/static/jsp/admin/index.jsp").forward(request, response);
 				break;
 			}

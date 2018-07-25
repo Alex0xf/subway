@@ -22,7 +22,8 @@
                     <div class="ibox-title">
                         <div class="ibox-tools">
                             <a class="collapse-link">
-                                <i class="fa fa-chevron-up"></i>
+                                <i class="fa fa-chevron-up">
+                                </i>
                             </a>
                             <a class="dropdown-toggle" data-toggle="dropdown" href="static/inspinia/table_data_tables.html#">
                                 <i class="fa fa-wrench"></i>
@@ -44,4 +45,5 @@
             </div>
             </div>
         </div>
-    </div>
+    
+ </div>

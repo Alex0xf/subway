@@ -33,15 +33,9 @@
                             <a class="collapse-link">
                                 <i class="fa fa-chevron-up"></i>
                             </a>
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="/subway/static/inspinia/table_data_tables.html#">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="static/inspinia/table_data_tables.html">
                                 <i class="fa fa-wrench"></i>
                             </a>
-                            <ul class="dropdown-menu dropdown-user">
-                                <li><a href="/subway/static/inspinia/table_data_tables.html#">Config option 1</a>
-                                </li>
-                                <li><a href="/subway/static/inspinia/table_data_tables.html#">Config option 2</a>
-                                </li>
-                            </ul>
                             <a class="close-link">
                                 <i class="fa fa-times"></i>
                             </a>
@@ -195,12 +189,13 @@
 
     } );
            
-      //修改指定行的图书信息
+      //跳转到修改页面
      $('#booklist_update_button').click( function () { 
         if(thisbookID==null){
          alert("请选择要修改的行");
          }else{ 
-      $.post("books/list",{page:"update",book_id:thisbookID,book_name:thisbookname,book_author:thisauthor,book_ftypeId:thisftypeId,book_ftypename:thisftypeName,book_stypeId:thisstypeId,book_stypeName:thisstypeName,book_status:thisstatus},function(data){
+      $.post("books/list",{page:"update",adminname:"${adminname}",book_id:thisbookID,book_name:thisbookname,book_author:thisauthor,book_ftypeId:thisftypeId,book_ftypename:thisftypeName,book_stypeId:thisstypeId,book_stypeName:thisstypeName,book_status:thisstatus},function(data){
+          //ajax刷新表格主体为修改图书信息的页面
           $(".ajax_book_updateORadd").html(data);
         },"html"); 
         }
@@ -210,8 +205,7 @@
            
        //增加一条图书记录
         $('#booklist_add_button').click( function () { 
-        
-      $.post("books/list",{page:"add"},function(data){
+      $.post("books/list",{page:"add",adminname:"${adminname}"},function(data){
           $(".ajax_book_updateORadd").html(data);
         },"html"); 
         

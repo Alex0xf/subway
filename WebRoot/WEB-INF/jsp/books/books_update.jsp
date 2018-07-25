@@ -1,12 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%-- <%
-String bookid=request.getParameter("book_id");
-%> --%>
+
  <div class="ibox-content">
    <div class="table-responsive">     
 
-         <form action='books/list?page=updateByBookId' method="post">
+         <form action='books/list?page=updateByBookId&&adminname=${adminname}' method="post">
 			  <div class="form-group">
 			    <label>ID</label>
 			    <input type="text" class="form-control" name="book_id" readonly="readonly"  value="${bookId}">

@@ -3,7 +3,7 @@
  <div class="ibox-content">
    <div class="table-responsive">     
 
-         <form action='books/list?page=addABook' method="post">
+         <form action='books/list?page=addABook&&adminname=${adminname}' method="post">
              <div class="form-group">
 			    <label>书籍id</label>
 			    <input type="text" class="form-control" name="true_book_id"  placeholder="请输入书籍id如3000">

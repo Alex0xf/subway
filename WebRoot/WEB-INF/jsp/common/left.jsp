@@ -16,11 +16,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">${adminname}</strong>
                              </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="/static/inspinia/profile.html">Profile</a></li>
-                            <li><a href="/static/inspinia/contacts.html">Contacts</a></li>
-                            <li><a href="/static/inspinia/mailbox.html">Mailbox</a></li>
+                            <li><a href="javascript:void(0)">Profile</a></li>
+                            <li><a href="javascript:void(0)">Contacts</a></li>
+                            <li><a href="javascript:void(0)">Mailbox</a></li>
                             <li class="divider"></li>
-                            <li><a href="/static/inspinia/login.html">Logout</a></li>
+                            <li><a href="static/jsp/admin/login.jsp">Logout</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
@@ -96,13 +96,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		 function gotoBookListPage(){
 		  var url = "books/list";
-			$.post(url,{page:"list"}, function(data) {
+			$.post(url,{page:"list",admin:'${adminname}'}, function(data) {
 				$(".ajax_replace").html(data);
 			}, "html");
 		 }
 		 
 		 function gotoHomePage(){
-		 /*  var url = "admin_index"; */
 		  var url = "admin_index";
 			$.post(url,{page:"hello"}, function(data) {
 				$(".ajax_replace").html(data);
