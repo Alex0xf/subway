@@ -21,7 +21,7 @@ import com.javasm.subway.admin.model.AdminModel;
  * @author Alex
  * @date 2018年7月23日
  */
-@WebFilter("/*")
+//@WebFilter("/*")
 public class AdminLoginFilter implements Filter {
 
     public AdminLoginFilter() {
